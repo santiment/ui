@@ -48,7 +48,7 @@ exports[`Modal component smoke 1`] = `
     onClick={[Function]}
   >
     <button
-      className=" button undefined"
+      className=" button"
       onClick={[Function]}
     >
       Check

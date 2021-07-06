@@ -15,16 +15,18 @@ const Button = ({
   fluid,
   border,
   disabled,
-  className,
+  className = '',
   forwardedRef,
   classes,
   icon,
   ...props
 }) => {
+  const variantClass = styles[variant] || ''
   return (
     <BaseButton
       className={cx({
-        [`${className} ${styles.button} ${styles[variant]}`]: true,
+        [`${className} ${styles.button}`]: true,
+        [variantClass]: !!variantClass,
         [styles[accent]]: accent,
         [`${styles.active} ${classes.active}`]: isActive,
         [styles.bordered]: border,

@@ -2,10 +2,10 @@
 @import '../mixins.scss';
 
 .icon {
-  --btn-icon-color: var(--btn-icon-color, var(--casper));
+  ---btn-icon-color: var(--btn-icon-color, var(--casper));
 
   margin-right: 8px;
-  fill: var(--btn-icon-color);
+  fill: var(---btn-icon-color);
   width: 16px;
   height: 16px;
 }
@@ -13,7 +13,8 @@
 .button {
   ---btn-accent-color: var(--btn-accent-color, var(--rhino));
   ---btn-accent-color-hover: var(--btn-accent-color-hover, var(--jungle-green));
-  ---btn-icon-color-hover: var(--btn-icon-color-hover, var(--jungle-green-light-3));
+  ---btn-icon-color: var(---btn-accent-color);
+  ---btn-icon-color-hover: var(--btn-icon-color-hover, var(---btn-accent-color-hover));
 
   @include border-box;
 
@@ -56,7 +57,7 @@
 }
 
 .fill {
-  --btn-icon-color: $white;
+  --btn-icon-color: $white !important;
 
   background: var(--btn-accent-color);
   color: $white;
@@ -72,18 +73,17 @@
   }
 
   &:hover {
+    ---btn-icon-color-hover: $white;
+
     background: var(--btn-accent-color-hover);
     color: $white;
     fill: $white;
-
-    .icon {
-      fill: $white;
-    }
   }
 }
 
 .bordered {
   --btn-disabled-color-border: var(--porcelain);
+  --btn-icon-color: var(--btn-accent-color, var(--rhino));
 
   background: var(--white);
   border: 1px solid var(--btn-accent-color, var(--porcelain));
@@ -136,52 +136,60 @@
   --btn-accent-color: var(--waterloo);
   --btn-accent-color-hover: var(--waterloo);
   --btn-accent-color-light: var(--porcelain);
+  --btn-icon-color-hover: var(--waterloo);
 }
 
 .positive {
   --btn-accent-color: var(--jungle-green);
   --btn-accent-color-hover: var(--jungle-green-hover);
   --btn-accent-color-light: var(--jungle-green-light);
+  --btn-icon-color-hover: var(--jungle-green-light-3);
 }
 
 .negative {
   --btn-accent-color: var(--persimmon);
   --btn-accent-color-hover: var(--persimmon-hover);
   --btn-accent-color-light: var(--persimmon-light);
+  --btn-icon-color-hover: var(--persimmon-hover);
 }
 
 .orange {
   --btn-accent-color: var(--texas-rose);
   --btn-accent-color-hover: var(--texas-rose-hover);
   --btn-accent-color-light: var(--texas-rose-light);
+  --btn-icon-color-hover: var(--texas-rose-hover);
 }
 
 .blue {
   --btn-accent-color: var(--dodger-blue);
   --btn-accent-color-hover: var(--dodger-blue-hover);
   --btn-accent-color-light: var(--dodger-blue-light);
+  --btn-icon-color-hover: var(--dodger-blue-hover);
 }
 
 .cyan {
   --btn-accent-color: var(--malibu);
   --btn-accent-color-hover: var(--malibu-hover);
   --btn-accent-color-light: var(--malibu-light);
+  --btn-icon-color-hover: var(--malibu-hover);
 }
 
 .purple {
   --btn-accent-color: var(--heliotrope);
   --btn-accent-color-hover: var(--heliotrope-hover);
   --btn-accent-color-light: var(--heliotrope-light);
+  --btn-icon-color-hover: var(--heliotrope-hover);
 }
 
 .sheets {
   --btn-accent-color: var(--sheets);
   --btn-accent-color-hover: var(--sheets-hover);
   --btn-accent-color-light: var(--white);
+  --btn-icon-color-hover: var(--sheets-hover);
 }
 
 .disabled {
-  --btn-icon-color: var(--mystic);
+  ---btn-icon-color: var(--mystic);
 
   color: var(--mystic) !important;
   background: var(--white) !important;

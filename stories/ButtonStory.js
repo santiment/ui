@@ -46,6 +46,9 @@ storiesOf('Button', module)
     <div>
       <ColorModeComparison>
         <Button icon='search'> Default button with type of icon</Button>
+        <Button icon='search' accent='orange'>
+          Default orange button with type of icon
+        </Button>
         <Button>
           <Icon type='search' /> Default button
         </Button>
